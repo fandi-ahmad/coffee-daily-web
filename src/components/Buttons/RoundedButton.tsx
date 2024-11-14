@@ -6,6 +6,7 @@ interface RoundedButtonProps {
   onClick?: () => void
   isActive?: boolean
   value?: number
+  isNoShadow?: boolean
 }
 
 const RoundedButton = (props: RoundedButtonProps) => {
@@ -19,7 +20,10 @@ const RoundedButton = (props: RoundedButtonProps) => {
         </div>
       : <div className='mb-3'></div> }
 
-      <button onClick={props.onClick} className={`${props.isActive ? 'bg-brown-300 text-white' : 'bg-white'} z-10 rounded-full px-4 py-2 text-sm capitalize shadow-soft ${props.className}`}>
+      <button
+        onClick={props.onClick}
+        className={`${props.isActive ? 'bg-brown-300 text-white' : 'bg-white'} z-10 rounded-full px-4 py-2 text-sm capitalize ${props.isNoShadow ? '' : 'shadow-soft'} ${props.className}`}
+      >
         {props.children}
       </button>
     </div>
