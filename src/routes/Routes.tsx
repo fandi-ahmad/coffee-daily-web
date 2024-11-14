@@ -10,6 +10,7 @@ import ProductDetail from "../pages/buyer/detailPages/ProductDetail";
 import OrderHistory from "../pages/buyer/detailPages/OrderHistory";
 import SignIn from "../pages/buyer/otherPages/SignIn";
 import BuyerNavbar from "../components/Navbar/BuyerNavbar";
+import SignUp from "../pages/buyer/otherPages/SignUp";
 
 export const RoutesTemplate = () => {
   return (
@@ -34,6 +35,7 @@ export const RoutesTemplate = () => {
         {/* other pages */}
         <Route element={<MainLayout/>}>
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Route>
 
       </Routes>
