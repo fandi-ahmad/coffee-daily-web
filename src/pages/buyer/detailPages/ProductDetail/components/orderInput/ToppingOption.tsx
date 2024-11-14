@@ -37,7 +37,6 @@ const ToppingOption = () => {
       <div className='mt-3 flex flex-wrap gap-3'>
         <RoundedButton
           className='border-2 border-brown-300'
-          isNoShadow
           onClick={() => setToppingId(null)}
           isActive={toppingId === null}
         >
@@ -47,7 +46,6 @@ const ToppingOption = () => {
         {toppingData.map((topping: ToppingType) => (
           <RoundedButton
             className='border-2 border-brown-300'
-            isNoShadow
             key={topping.id}
             onClick={() => setToppingId(topping.id)}
             isActive={topping.id === toppingId}

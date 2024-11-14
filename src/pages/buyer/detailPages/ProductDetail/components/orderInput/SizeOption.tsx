@@ -39,7 +39,6 @@ const SizeOption = () => {
         {sizeData.map((size: SizeType) => (
           <RoundedButton
             className='border-2 border-brown-300'
-            isNoShadow
             key={size.id}
             onClick={() => setSizeId(size.id)}
             isActive={size.id === sizeId}

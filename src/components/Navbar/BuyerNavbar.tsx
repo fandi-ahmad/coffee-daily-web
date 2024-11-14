@@ -11,22 +11,28 @@ const IconMenu = (props: IconMenuProps) => {
   const path = location.pathname
   const navigate = useNavigate()
 
-  const getScrollHeight = () => {
-    const root = document.getElementById('root')
-    root?.scrollIntoView()
-  }
-
   const movePath = () => {
     navigate(props.to)
-    getScrollHeight()
+    document.getElementById('root')?.scrollIntoView()
   }
 
-  return (
-    <a onClick={movePath} className={`${path === props.to ? 'text-dark-brown-200' : 'text-dark-brown-100'} text-center hover:text-dark-brown-200 duration-200 cursor-pointer`}>
-      <i className={`fa-solid ${props.icon} text-2xl`}></i>
-      <div className="text-xs">{props.text}</div>
-    </a>
-  )
+
+  if (props.to === '/') {
+    return (
+      <a onClick={movePath} className={`${path === '/' ? 'text-dark-brown-200' : 'text-dark-brown-100'} text-center hover:text-dark-brown-200 duration-200 cursor-pointer`}>
+        <i className={`fa-solid ${props.icon} text-2xl`}></i>
+        <div className="text-xs">{props.text}</div>
+      </a>
+    )
+  } else {
+    return (
+      <a onClick={movePath} className={`${path === props.to || path.includes(props.to) ? 'text-dark-brown-200' : 'text-dark-brown-100'} text-center hover:text-dark-brown-200 duration-200 cursor-pointer`}>
+        <i className={`fa-solid ${props.icon} text-2xl`}></i>
+        <div className="text-xs">{props.text}</div>
+      </a>
+    )
+  }
+
 }
 
 const BuyerNavbar = () => {
