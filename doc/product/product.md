@@ -209,3 +209,93 @@ Endpoint: `Delete` /api/product/delete/:id_product
   "message": "product is not found"
 }
 ```
+
+## 7. Set Active/Non-Active Product
+
+Endpoint : `PUT` /api/product/active
+
+7.1 Request
+```json
+{
+  "id": 1,  // id_product
+  "is_active": false
+}
+```
+
+7.2 Response
+```json
+{
+  "status": 200,
+  "message": "${product_name} set active"
+}
+
+{
+  "status": 200,
+  "message": "${product_name} set non active"
+}
+```
+
+## 8. Get All Product Sales (Seller Side)
+
+Endpoint : `GET` /api/product/sales/all/:id_user_seller
+
+- halaman home yang menampilkan semua product yang terjual, get dari tabel products
+
+8.1 Response
+```json
+{
+  "status": 200,
+  "message": "ok",
+  "data": [
+    {
+      "id": 1,
+      "name": "smoothy coffee",
+      "price": 20000,
+      "total_sales": 3,
+      "total_payment": 62000
+    }
+  ]
+}
+```
+
+## 9. Get Product Order History by Product (Seller)
+
+Endpoint : `GET` /api/product/sales/history/:id_product
+
+- halaman home -> product order history
+- query, limit=10, page=1
+
+```json
+{
+  "status": 200,
+  "message": "ok",
+  "data": {
+    "id": 1,
+    "name": "smoothy coffee",
+    "price": 20000,
+    "total_sales": 3,
+    "total_payment": 62000,
+    "page": 1,
+    "limit": 10,
+    "total_data": 12,
+    "details": [
+      {
+        "id": 1,
+        "username_buyer": "bambang",
+        "address_buyer": "jl labu",
+        "phone_number": "082244446666",
+
+        "topping_name": "caramel",
+        "topping_price": 2000,
+
+        "size_name": "medium",
+        "size_price": 0,
+
+        "quantity": 1,
+        "payment_method": "cash",
+        "total_payment": 22000
+      }
+    ]
+  }
+}
+```

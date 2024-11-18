@@ -71,7 +71,7 @@ Endpoint : `POST` /api/favorite/create
 
 ## 3. Delete favorite
 
-Endpoint : `DELETE` /api/favorite/delete/:id_user/id_product
+Endpoint : `DELETE` /api/favorite/delete/:id_user/:id_product
 
 3.1 Response Success
 ```json
