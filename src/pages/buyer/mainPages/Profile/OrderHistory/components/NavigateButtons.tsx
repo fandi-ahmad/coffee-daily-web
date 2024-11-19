@@ -1,4 +1,4 @@
-import LinkRoundedButton from "../../../../../components/Buttons/LinkRoundedButton"
+import LinkRoundedButton from "../../../../../../components/Buttons/LinkRoundedButton"
 
 const NavigateButtons = () => {
   const baseUrl = '/profile/order-history/'

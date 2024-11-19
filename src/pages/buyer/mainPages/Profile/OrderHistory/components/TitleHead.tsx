@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ScreenLayout from '../../../../../layouts/ScreenLayout'
+import ScreenLayout from '../../../../../../layouts/ScreenLayout'
 
 const TitleHead = () => {
   return (

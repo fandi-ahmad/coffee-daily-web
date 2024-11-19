@@ -13,7 +13,7 @@ Endpoint : `GET` /api/cart/:id_user
     {
       "id": 1,
       "photo" : "image.png",
-      "product_name": "white coffee",
+      "name": "white coffee",
       "price": 22000,
       "quantity": 2,
       "topping": {
@@ -30,7 +30,7 @@ Endpoint : `GET` /api/cart/:id_user
     {
       "id": 1,
       "photo" : "image.png",
-      "product_name": "white coffee",
+      "name": "white coffee",
       "price": 22000,
       "quantity": 2,
       "topping": null,  // karena tidak ada topping
@@ -91,5 +91,25 @@ Endpoint : `DELETE` /api/cart/delete/:id_cart
 {
   "status": 404,
   "message": "product is not found"
+}
+```
+
+## 4. Update Quantity Product in Cart
+
+Endpoint : `PUT` /api/cart/update
+
+4.1 Request
+```json
+{
+  "id": 1, // id_cart
+  "quantity": 2
+}
+```
+
+4.2 Response
+```json
+{
+  "status": 200,
+  "message": "update quantity in product successfully"
 }
 ```
