@@ -18,14 +18,11 @@ export const RoutesTemplate = () => {
           <Route path="/" element={<Home />} />
           <Route path="/category/*" element={<Category />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/*" element={<ProductDetail/>} />
 
           <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/order-history/product/*" element={<OrderHistoryProduct/>} />
-          <Route path="/profile/order-history/packaged" element={<OrderHistory />} />
-          <Route path="/profile/order-history/delivery" element={<OrderHistory />} />
-          <Route path="/profile/order-history/finished" element={<OrderHistory />} />
-          <Route path="/profile/order-history/return" element={<OrderHistory />} />
-          <Route path="/profile/order-history/canceled" element={<OrderHistory />} />
+          <Route path="/profile/order-history/product/:id_product_order" element={<OrderHistoryProduct/>} />
+          <Route path="/profile/order-history/:status" element={<OrderHistory />} />
         </Route>
 
         {/* other pages */}

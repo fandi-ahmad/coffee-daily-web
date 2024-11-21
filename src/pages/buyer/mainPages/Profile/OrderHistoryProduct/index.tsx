@@ -1,11 +1,37 @@
-import ScreenLayout from "../../../../../layouts/ScreenLayout"
+import ScreenLayout from "@/layouts/ScreenLayout"
 import CoverAndButton from "./components/CoverAndButton"
 import DetailInfo from "./components/DetailInfo"
 import FavoriteButton from "./components/FavoriteButton"
 import LiveViewButton from "./components/LiveViewButton"
 import ProductInfo from "./components/ProductInfo"
+import useFetch from "@/hooks/useFetch"
+import { useNavigate, useParams } from "react-router-dom"
+import { OrderHistoryType } from "@/interface/OrderHistoryType"
+import { ApiType } from "@/interface/ApiType"
+import { useEffect } from "react"
 
 const OrderHistoryProduct = () => {
+  const {id_product_order}: any = useParams()
+  const navigate = useNavigate()
+
+  const { data, loading, error } = useFetch(`/api/product/order/detail/${id_product_order}.json`)
+  const dataResponse: ApiType = data
+  const dataOrder: OrderHistoryType = dataResponse?.data
+
+  useEffect(() => {
+    console.log({id_product_order, dataOrder, data, dataResponse}, '<-- data json');
+    
+    if (dataResponse && dataResponse.status === 404) {
+      navigate('/profile')
+    } else if (dataOrder && id_product_order != dataOrder.id) {
+      navigate('/profile')
+    } else {
+      console.log('data ditemukan');
+    }
+
+  }, [data, dataOrder])
+
+
   return (
     <>
       <CoverAndButton/>

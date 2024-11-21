@@ -1,5 +1,5 @@
-import ScreenLayout from "../../../../layouts/ScreenLayout"
-import MenuOptionList from "../../../../components/MenuOption/MenuOptionList"
+import ScreenLayout from "@/layouts/ScreenLayout"
+import MenuOptionList from "@/components/MenuOption/MenuOptionList"
 import { Link } from "react-router-dom"
 import HeroSection from "./components/HeroSection"
 import AccountSetting from "./components/AccountSetting"
