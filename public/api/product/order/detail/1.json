@@ -1,0 +1,24 @@
+{
+  "status": 200,
+  "message": "ok",
+  "data": {
+    "id": 1,
+    "id_product": 4,
+    "username_seller": "tokoenam",
+    "address_seller": "jl asam",
+
+    "photo": "image.jpg",
+    "product_name": "capuchino",
+    "price": 20000,
+
+    "topping_name": "boba",
+    "topping_price": 2000,
+    
+    "size_name": "large",
+    "size_price": 5000,
+
+    "quantity": 1,
+    "payment_method": "cash",
+    "total_payment": 22000
+  }
+}
