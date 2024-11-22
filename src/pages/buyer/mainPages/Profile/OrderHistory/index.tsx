@@ -1,5 +1,5 @@
 import ScreenLayout from "@/layouts/ScreenLayout"
-import ProductHistoryCard from "@/components/Cards/ProductHistoryCard"
+import ProductOrderedCard from "@/components/Cards/ProductOrderedCard"
 import NavigateButtons from "./components/NavigateButtons"
 import TitleHead from "./components/TitleHead"
 import useFetch from "@/hooks/useFetch"
@@ -37,14 +37,14 @@ const OrderHistory = () => {
         {error && <div> Error: {error}</div>}
 
         {dataOrder && dataOrder.map((product: OrderHistoryType, index: number) => (
-          <ProductHistoryCard
+          <ProductOrderedCard
             key={index}
             name={product.product_name}
             quantity={product.quantity}
             topping={product.topping_name}
             size={product.size_name}
             price={product.total_payment}
-            to={`/profile/order-history/product/${product.id}`}
+            onClick={() => navigate(`/profile/order-history/product/${product.id}`)}
           />
         ))}
       </ScreenLayout>
